@@ -1,0 +1,45 @@
+"""
+The `BigInt` scalar type represents non-fractional signed whole numeric values. BigInt can represent values between -(2^53) + 1 and 2^53 - 1.
+"""
+scalar BigInt
+
+"""
+`Date` type as integer. Type represents date and time as number of milliseconds from start of UNIX epoch.
+"""
+scalar Timestamp
+
+type StatusModel {
+    id: BigInt!
+    name: String!
+    alias: String!
+    createdAt: Timestamp
+    createdBy: BigInt!
+    lastUpdatedAt: Timestamp
+    lastUpdatedBy: BigInt!
+    deleted: Boolean!
+}
+
+type mutation {
+    updateStatus(updateStatusData: StatusUpdateArgs!): StatusModel!
+}
+
+type Query {
+    _dummy: String
+}
+
+input StatusUpdateArgs {
+    """
+    Enter Status id
+    """
+    id: Float!
+
+    """
+    Enter Status name
+    """
+    name: String
+
+    """
+    Enter Status alias
+    """
+    alias: String
+}

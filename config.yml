@@ -1,0 +1,12 @@
+introspection:
+    schemaFile: schema.gql
+    dynamicExamplesProcessingModule: ./example
+
+servers:
+    - url: http://localhost:5000/graphql
+      description: Development
+      production: false
+
+info:
+    title: Example
+    description: Example.
